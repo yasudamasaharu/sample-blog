@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, googleAuthProvider } from "firebase/auth";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+
 const firebaseConfig = {
   apiKey: "AIzaSyAJFkOE0wKg6etTuAg0fixBW0CPKbsxq4k",
   authDomain: "blog-47fff.firebaseapp.com",
@@ -11,3 +12,10 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+const db = getFirestore(app);
+// cloud firestoreの初期化をしている
+
+export { auth, provider, db };
